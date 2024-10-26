@@ -7,6 +7,7 @@ Prerequirements:
 ## How to run
 ```
 npm i -g pnpm
+pnpm i
 
 // development build
 pnpm tauri dev
