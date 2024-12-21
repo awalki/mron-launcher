@@ -10,6 +10,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 		<BrowserRouter>
 			<Routes>
 				<Route path='/' element={<App />} />
+				// TODO: Add settings route to edit player_name or something else
 			</Routes>
 		</BrowserRouter>
 	</Provider>

@@ -14,7 +14,6 @@ import {
 import { RootState } from '../state/store'
 
 export default function Install() {
-	// Redux
 	const launcher = useSelector((state: RootState) => state.launcher.launcher)
 	const dispatch = useDispatch()
 
@@ -52,7 +51,7 @@ export default function Install() {
 
 		// Install logic
 
-		// Download mron to cache
+		// Download mron archives to cache folder
 		await downloadMRON()
 
 		// Extract mron archives to correct paths
@@ -64,9 +63,6 @@ export default function Install() {
 			`${staticPaths.cache}/toDocuments.zip`,
 			`${staticPaths.documents}`
 		)
-
-		console.log(localStorage.getItem('game-path'))
-		console.log(staticPaths.documents)
 
 		if (!(await exists(`${staticPaths.documents}/players/autoexec.cfg`))) {
 			await extractZip(

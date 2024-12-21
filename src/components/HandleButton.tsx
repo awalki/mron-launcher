@@ -6,5 +6,11 @@ import { useSelector } from 'react-redux'
 export default function HandleButton() {
 	const launcher = useSelector((state: RootState) => state.launcher.launcher)
 
-	return <>{launcher.isInstalled ? <Play /> : <Install />}</>
+	return (
+		<section className='flex justify-center flex-col'>
+			<div className='flex flex-col items-center py-2'>
+				{launcher.isInstalled ? <Play /> : <Install />}
+			</div>
+		</section>
+	)
 }
