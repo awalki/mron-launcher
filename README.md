@@ -1,7 +1,14 @@
-# Tauri + React + Typescript
+# How to build
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+## Prerequirements:
+- Node.js
+- Rust
 
-## Recommended IDE Setup
+I preffer to use bun
+```
+npm i -g bun
+bun install
+bun tauri build
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+Your exe file will be available in src-tauri/target/release/mron-launcher.exe
