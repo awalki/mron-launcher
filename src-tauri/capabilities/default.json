@@ -1,28 +1,24 @@
 {
-  "$schema": "../gen/schemas/desktop-schema.json",
-  "identifier": "default",
-  "description": "Capability for the main window",
-  "windows": [
-    "main"
-  ],
-  "permissions": [
-    "core:default",
-    "dialog:default",
-    "core:path:default",
-    "fs:allow-exists",
-    "upload:allow-download",
-    "fs:allow-app-read",
-    {
-      "identifier": "fs:allow-home-write-recursive",
-      "allow": [
-        {
-          "path": "$HOME/*"
-        }
-      ]
-    },
-    "shell:default",
-    "process:default",
-    "process:default",
-    "process:default"
-  ]
+	"$schema": "../gen/schemas/desktop-schema.json",
+	"identifier": "default",
+	"description": "Capability for the main window",
+	"windows": ["main"],
+	"permissions": [
+		"core:default",
+		"dialog:default",
+		"core:path:default",
+		"fs:allow-exists",
+		"upload:allow-download",
+		"fs:allow-app-read",
+		{
+			"identifier": "fs:allow-home-write-recursive",
+			"allow": [
+				{
+					"path": "$HOME/*"
+				}
+			]
+		},
+		"shell:default",
+		"process:default"
+	]
 }

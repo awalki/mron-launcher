@@ -6,7 +6,7 @@ function App() {
 	// TODO: Add errors logging
 
 	return (
-		<main className='flex flex-col h-screen justify-center pb-12'>
+		<main className='flex flex-col h-screen justify-center pb-12 select-none'>
 			<ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
 				<Launcher />
 			</ThemeProvider>

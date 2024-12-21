@@ -64,6 +64,7 @@ export default function Install() {
 			`${staticPaths.documents}`
 		)
 
+		// Extract default config if it doesn't exist
 		if (!(await exists(`${staticPaths.documents}/players/autoexec.cfg`))) {
 			await extractZip(
 				`${staticPaths.cache}/defaultConfig.zip`,
