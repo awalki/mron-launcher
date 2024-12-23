@@ -1,17 +1,21 @@
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
-import App from './App'
 import { store } from './state/store'
 
 import { BrowserRouter, Route, Routes } from 'react-router'
+import LauncherPage from './LauncherPage'
+import Layout from './Layout'
+import SettingsPage from './SettingsPage'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
-	<Provider store={store}>
-		<BrowserRouter>
-			<Routes>
-				<Route path='/' element={<App />} />
-				// TODO: Add settings route to edit player_name or something else
-			</Routes>
-		</BrowserRouter>
-	</Provider>
+	<Layout>
+		<Provider store={store}>
+			<BrowserRouter>
+				<Routes>
+					<Route path='/' element={<LauncherPage />} />
+					<Route path='/settings' element={<SettingsPage />} />
+				</Routes>
+			</BrowserRouter>
+		</Provider>
+	</Layout>
 )

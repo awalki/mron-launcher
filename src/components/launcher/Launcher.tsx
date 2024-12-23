@@ -1,9 +1,11 @@
-import Header from '@/components/Header'
 import { initCache } from '@/handlers/store'
 import { setInstalled } from '@/state/launcher/launcherSlice'
+import { Settings } from 'lucide-react'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router'
 import HandleButton from './HandleButton'
+import Header from './Header'
 
 export default function Launcher() {
 	const dispatch = useDispatch()
@@ -24,6 +26,9 @@ export default function Launcher() {
 
 	return (
 		<>
+			<Link to={'/settings'}>
+				<Settings className='absolute top-4 left-4' />
+			</Link>
 			<Header />
 			<HandleButton />
 		</>

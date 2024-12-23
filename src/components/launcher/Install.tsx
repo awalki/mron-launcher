@@ -10,8 +10,8 @@ import {
 	reset,
 	setInstalled,
 	setInstallling,
-} from '../state/launcher/launcherSlice'
-import { RootState } from '../state/store'
+} from '../../state/launcher/launcherSlice'
+import { RootState } from '../../state/store'
 
 export default function Install() {
 	const launcher = useSelector((state: RootState) => state.launcher.launcher)

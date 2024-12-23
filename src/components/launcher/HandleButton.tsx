@@ -1,7 +1,7 @@
-import Install from '@/components/Install'
-import Play from '@/components/Play'
 import { RootState } from '@/state/store'
 import { useSelector } from 'react-redux'
+import Install from './Install'
+import Play from './Play'
 
 export default function HandleButton() {
 	const launcher = useSelector((state: RootState) => state.launcher.launcher)
