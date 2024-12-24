@@ -1,5 +1,6 @@
 import { useToast } from '@/hooks/use-toast'
 import { reset } from '@/state/launcher/launcherSlice'
+import { relaunch } from '@tauri-apps/plugin-process'
 import { Wrench } from 'lucide-react'
 import { useDispatch } from 'react-redux'
 import { Button } from '../ui/button'
@@ -9,7 +10,7 @@ export default function HandleSettings() {
 	const dispatch = useDispatch()
 	const { toast } = useToast()
 
-	function clearCache() {
+	async function clearCache() {
 		if (localStorage.getItem('game-path')) {
 			toast({
 				title: 'Your install has been reset',
@@ -17,8 +18,9 @@ export default function HandleSettings() {
 					"Return back and select correct game path then press 'Install'",
 			})
 
-			localStorage.removeItem('game-path')
+			localStorage.clear()
 			dispatch(reset())
+			await relaunch()
 		} else {
 			toast({
 				title: 'Install not found',

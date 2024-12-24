@@ -5,15 +5,15 @@ export async function initCache() {
 	// Links
 	localStorage.setItem(
 		'documents-folder',
-		'https://www.dropbox.com/scl/fi/6kpzq3o4tyr9xi2kdeb9p/toDocuments.zip?rlkey=u1w153jbv63n08orgkhp0v7z6&st=hfe59bxc&dl=1'
+		'https://www.dropbox.com/scl/fi/yzdq21moyh4mz5x5izh91/toDocuments.zip?rlkey=clqzqj35ak2p45gcpof0n89vs&st=ict0vzej&dl=1'
 	)
 	localStorage.setItem(
 		'game-folder',
-		'https://www.dropbox.com/scl/fi/bbn9fttza9wcjcpvkmwq7/toGameFolder.zip?rlkey=o511nhjbz8sumtad2tjy7cgk6&st=uebfruxd&dl=1'
+		'https://www.dropbox.com/scl/fi/wc4xle1cyjjpwb03xcrfm/toGameFolder.zip?rlkey=nx884i7ziqnm9cm34uz7rviu6&st=16h7pgam&dl=1'
 	)
 	localStorage.setItem(
 		'config-folder',
-		'https://www.dropbox.com/scl/fi/ihlnoyvcau6ryyy9q0bqq/defaultConfig.zip?rlkey=80xdy2vc6kejjib4roc9e5lkk&st=g0i38kut&dl=1'
+		'https://www.dropbox.com/scl/fi/ddasyl1ix8siom50kq2zw/defaultConfig.zip?rlkey=jvo86a2xv5yae0yje3waga20n&st=gsycmiye&dl=1'
 	)
 
 	// Paths
