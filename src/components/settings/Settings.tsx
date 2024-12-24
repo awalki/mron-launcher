@@ -1,7 +1,7 @@
 import { ArrowBigLeft } from 'lucide-react'
 import { Link } from 'react-router'
+import Header from '../common/Header'
 import HandleSettings from './HandleSettings'
-import SettingsHeader from './Header'
 
 export default function Settings() {
 	return (
@@ -9,7 +9,7 @@ export default function Settings() {
 			<Link to={'/'}>
 				<ArrowBigLeft className='absolute top-4 left-4' />
 			</Link>
-			<SettingsHeader />
+			<Header title='CONFIG' description='Edit / Repair' />
 			<HandleSettings />
 		</>
 	)

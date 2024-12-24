@@ -6,6 +6,7 @@ export default {
 		extend: {
 			fontFamily: {
 				montserrat: ['Montserrat', 'sans-serif'],
+				rmono: ['Roboto Mono', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

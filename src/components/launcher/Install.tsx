@@ -77,12 +77,12 @@ export default function Install() {
 
 	return (
 		<Button
-			className='w-1/2'
+			className='w-1/2 font-mono'
 			onClick={handleInstall}
 			disabled={launcher.isInstalling}
 		>
 			{launcher.isInstalling ? (
-				<span className='flex flex-row items-center'>
+				<span className='flex flex-row items-center font-mono'>
 					<Loader2 className='animate-spin mr-2' />
 					Installing...
 				</span>

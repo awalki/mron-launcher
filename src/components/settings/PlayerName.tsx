@@ -76,10 +76,11 @@ export function PlayerName() {
 					name='username'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel>Player name</FormLabel>
+							<FormLabel className='font-mono'>Player name</FormLabel>
 							<FormControl>
 								<div className='flex gap-2'>
 									<Input
+										className='font-mono'
 										placeholder={
 											localStorage.getItem('player-name') ?? 'gay enjoyer'
 										}

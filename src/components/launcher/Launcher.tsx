@@ -4,8 +4,8 @@ import { Settings } from 'lucide-react'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { Link } from 'react-router'
+import Header from '../common/Header'
 import HandleButton from './HandleButton'
-import Header from './Header'
 
 export default function Launcher() {
 	const dispatch = useDispatch()
@@ -29,7 +29,7 @@ export default function Launcher() {
 			<Link to={'/settings'}>
 				<Settings className='absolute top-4 left-4' />
 			</Link>
-			<Header />
+			<Header title='MRON' description='Best WZ Client' />
 			<HandleButton />
 		</>
 	)
