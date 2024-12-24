@@ -44,7 +44,6 @@
 			"windows": {
 				"installMode": "passive"
 			},
-			"active": "true",
 			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDExNjYyMjE1Qjk3QkY1MTMKUldRVDlYdTVGU0ptRVRZaFZ1enJobUlaSVE3NWNvQWgwYTc3VzdFYnJwUGowaHBjNW9MVVU5TFoK",
 			"endpoints": "https://github.com/awalki/mron-launcher/releases/latest/download/latest.json"
 		}
