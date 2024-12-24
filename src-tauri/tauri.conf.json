@@ -45,7 +45,7 @@
 				"installMode": "passive"
 			},
 			"active": "true",
-			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEREMjc5NzNBNzQ5RTM2MzMKUldRek5wNTBPcGNuM1pGYlBXRnpQMThjbUpTN0kxU2xkVVFWazU0SktBbk4rU2lBZnIxOC9YekEK",
+			"pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEJBQkZGOTBDQzIwMkFCNjYKUldSbXF3TENEUG0vdW16ZGU1OWpxMDBIMU92ZGNKckZBMVRFKzduYjFWdkMxYWNyaFNtSHNyWGwK",
 			"endpoints": "https://github.com/awalki/mron-launcher/releases/latest/download/latest.json"
 		}
 	}
