@@ -4,9 +4,9 @@
 	"version": "1.2.0",
 	"identifier": "me.je3ns.app",
 	"build": {
-		"beforeDevCommand": "bun run dev",
+		"beforeDevCommand": "yarn dev",
 		"devUrl": "http://localhost:1420",
-		"beforeBuildCommand": "bun run build",
+		"beforeBuildCommand": "yarn build",
 		"frontendDist": "../dist"
 	},
 	"app": {
