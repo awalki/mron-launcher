@@ -1,6 +1,6 @@
 import { useToast } from '@/hooks/use-toast'
 import { reset } from '@/state/launcher/launcherSlice'
-import { exit } from '@tauri-apps/plugin-process'
+import { relaunch } from '@tauri-apps/plugin-process'
 import { Wrench } from 'lucide-react'
 import { useDispatch } from 'react-redux'
 import { Button } from '../ui/button'
@@ -20,7 +20,7 @@ export default function HandleSettings() {
 
 			localStorage.clear()
 			dispatch(reset())
-			await exit()
+			await relaunch()
 		} else {
 			toast({
 				title: 'Install not found',

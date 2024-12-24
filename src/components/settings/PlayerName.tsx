@@ -14,7 +14,6 @@ import {
 	FormMessage,
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
-import { staticPaths } from '@/handlers/store'
 import { toast } from '@/hooks/use-toast'
 import { readTextFileLines, writeTextFile } from '@tauri-apps/plugin-fs'
 import { Check } from 'lucide-react'
@@ -49,7 +48,7 @@ export function PlayerName() {
 		let ans = []
 
 		const lines = await readTextFileLines(
-			`${staticPaths.documents}/players/autoexec.cfg`
+			`${localStorage.getItem('documents-path')}/players/autoexec.cfg`
 		)
 		for await (const line of lines) {
 			if (line.includes('player_name')) {
@@ -60,7 +59,7 @@ export function PlayerName() {
 		}
 		console.log(ans)
 		await writeTextFile(
-			`${staticPaths.documents}/players/autoexec.cfg`,
+			`${localStorage.getItem('documents-path')}/players/autoexec.cfg`,
 			ans.join('\n')
 		)
 	}

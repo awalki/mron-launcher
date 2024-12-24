@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import { getGamePath, links, staticPaths } from '@/handlers/store'
+import { getGamePath } from '@/handlers/store'
 import { invoke } from '@tauri-apps/api/core'
 import { appCacheDir } from '@tauri-apps/api/path'
 import { exists } from '@tauri-apps/plugin-fs'
@@ -19,15 +19,15 @@ export default function Install() {
 
 	async function downloadMRON() {
 		await download(
-			links.documents as string,
+			localStorage.getItem('documents-folder') as string,
 			`${await appCacheDir()}/toDocuments.zip`
 		)
 		await download(
-			links.game as string,
+			localStorage.getItem('game-folder') as string,
 			`${await appCacheDir()}/toGameFolder.zip`
 		)
 		await download(
-			links.config as string,
+			localStorage.getItem('config-folder') as string,
 			`${await appCacheDir()}/defaultConfig.zip`
 		)
 		console.log(`${await appCacheDir()}/defaultConfig.zip`)
@@ -56,19 +56,23 @@ export default function Install() {
 
 		// Extract mron archives to correct paths
 		await extractZip(
-			`${staticPaths.cache}/toGameFolder.zip`,
+			`${localStorage.getItem('cache-path')}/toGameFolder.zip`,
 			`${localStorage.getItem('game-path')}`
 		)
 		await extractZip(
-			`${staticPaths.cache}/toDocuments.zip`,
-			`${staticPaths.documents}`
+			`${localStorage.getItem('cache-path')}/toDocuments.zip`,
+			`${localStorage.getItem('documents-path')}`
 		)
 
 		// Extract default config if it doesn't exist
-		if (!(await exists(`${staticPaths.documents}/players/autoexec.cfg`))) {
+		if (
+			!(await exists(
+				`${localStorage.getItem('documents-path')}/players/autoexec.cfg`
+			))
+		) {
 			await extractZip(
-				`${staticPaths.cache}/defaultConfig.zip`,
-				`${staticPaths.documents}`
+				`${localStorage.getItem('cache-path')}/defaultConfig.zip`,
+				`${localStorage.getItem('documents-path')}`
 			)
 		}
 
