@@ -33,14 +33,3 @@ export async function getGamePath() {
 	if (file === null) return
 	localStorage.setItem('game-path', file)
 }
-
-export const links = {
-	documents: localStorage.getItem('documents-folder'),
-	game: localStorage.getItem('game-folder'),
-	config: localStorage.getItem('config-folder'),
-}
-
-export const staticPaths = {
-	documents: localStorage.getItem('documents-path'),
-	cache: localStorage.getItem('cache-path'),
-}

@@ -8,7 +8,7 @@ export default function HandleButton() {
 
 	return (
 		<section className='flex justify-center flex-col'>
-			<div className='flex flex-col items-center py-2'>
+			<div className='flex flex-col items-center'>
 				{launcher.isInstalled ? <Play /> : <Install />}
 			</div>
 		</section>

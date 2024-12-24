@@ -19,7 +19,10 @@ export default function Play() {
 
 	return (
 		<div className='flex gap-2'>
-			<Button className='w-48 font-mono' onClick={handlePlay}>
+			<Button
+				className='w-52 font-paragraph font-bold bg-emerald-500 hover:bg-emerald-600'
+				onClick={handlePlay}
+			>
 				Play
 			</Button>
 		</div>

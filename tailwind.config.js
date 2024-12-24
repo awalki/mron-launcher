@@ -5,8 +5,8 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				montserrat: ['Stratum2', 'sans-serif'],
-				rmono: ['Stratum2', 'sans-serif'],
+				header: ['Bender', 'sans-serif'],
+				paragraph: ['Bender', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

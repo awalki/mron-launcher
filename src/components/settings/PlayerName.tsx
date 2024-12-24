@@ -66,22 +66,21 @@ export function PlayerName() {
 
 	return (
 		<Form {...form}>
-			<form
-				onSubmit={form.handleSubmit(onSubmit)}
-				className='w-2/3 space-y-6 flex'
-			>
+			<form onSubmit={form.handleSubmit(onSubmit)} className='w-2/3 flex'>
 				<FormField
 					control={form.control}
 					name='username'
 					render={({ field }) => (
 						<FormItem>
-							<FormLabel className='font-mono'>Player name</FormLabel>
+							<FormLabel className='font-paragraph font-medium'>
+								Player name
+							</FormLabel>
 							<FormControl>
 								<div className='flex gap-2'>
 									<Input
 										className='font-mono'
 										placeholder={
-											localStorage.getItem('player-name') ?? 'gay enjoyer'
+											localStorage.getItem('player-name') ?? 'camper_on_YT'
 										}
 										{...field}
 									/>

@@ -10,6 +10,9 @@
 		"fs:allow-exists",
 		"upload:allow-download",
 		"fs:allow-app-read",
+		"updater:default",
+		"updater:allow-check",
+		"updater:allow-download-and-install",
 		{
 			"identifier": "fs:allow-home-write-recursive",
 			"allow": [

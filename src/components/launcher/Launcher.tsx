@@ -29,7 +29,7 @@ export default function Launcher() {
 			<Link to={'/settings'}>
 				<Settings className='absolute top-4 left-4' />
 			</Link>
-			<Header title='MRON' description='Best WZ Client' />
+			<Header title='MRON' description='Best Warzone Mod' />
 			<HandleButton />
 		</>
 	)

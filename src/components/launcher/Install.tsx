@@ -86,7 +86,7 @@ export default function Install() {
 			disabled={launcher.isInstalling}
 		>
 			{launcher.isInstalling ? (
-				<span className='flex flex-row items-center font-mono'>
+				<span className='flex flex-row items-center font-paragraph font-bold'>
 					<Loader2 className='animate-spin mr-2' />
 					Installing...
 				</span>

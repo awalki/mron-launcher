@@ -9,7 +9,7 @@ export default function Settings() {
 			<Link to={'/'}>
 				<ArrowBigLeft className='absolute top-4 left-4' />
 			</Link>
-			<Header title='CONFIG' description='Edit / Repair' />
+			<Header title='Config' description='Edit / Repair' />
 			<HandleSettings />
 		</>
 	)

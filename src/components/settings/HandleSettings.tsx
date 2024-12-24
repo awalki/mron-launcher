@@ -32,11 +32,11 @@ export default function HandleSettings() {
 
 	return (
 		<section className='flex justify-center flex-col'>
-			<div className='flex flex-col items-center py-2'>
+			<div className='flex flex-col items-center'>
 				<PlayerName />
 				<Button
 					variant={'link'}
-					className='absolute top-3 right-2 decoration-transparent hover:[#151515] font-mono'
+					className='absolute top-3 right-2 decoration-transparent hover:[#151515] font-paragraph'
 					onClick={clearCache}
 				>
 					Repair <Wrench />
