@@ -1,6 +1,6 @@
 [package]
 name = "mron-launcher"
-version = "1.2.1"
+version = "1.2.2"
 description = "MRON Launcher"
 authors = ["awalki"]
 edition = "2021"
@@ -25,7 +25,7 @@ opt-level = "s"
 strip = true
 
 [dependencies]
-tauri = { version = "2", features = [] }
+tauri = { version = "2", features = ["devtools"] }
 tauri-plugin-opener = "2"
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
