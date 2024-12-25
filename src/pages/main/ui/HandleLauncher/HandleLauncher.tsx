@@ -3,6 +3,7 @@ import { setInstalled } from '@/entities/main/model/launcherSlice'
 import { initCache } from '@/entities/main/model/storage'
 import Install from '@/features/install/ui/Install'
 import Play from '@/features/play/ui/Play'
+import { checkForAppUpdates } from '@/shared/utils/updater'
 import { Header } from '@/widgets/header/ui'
 import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -22,6 +23,7 @@ export default function HandleButton() {
 			if (localStorage.getItem('game-path') === null) return initCache()
 
 			dispatch(setInstalled())
+			await checkForAppUpdates()
 		}
 		checkInstallation()
 	}, [])
