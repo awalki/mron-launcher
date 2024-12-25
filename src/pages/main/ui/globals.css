@@ -63,7 +63,7 @@
 		--radius: 0.5rem;
 	}
 	.dark {
-		--background: 0 0% 3.9%;
+		--background: 0 0% 5%;
 
 		--foreground: 0 0% 98%;
 
@@ -119,5 +119,22 @@
 	}
 	body {
 		@apply bg-background text-foreground;
+		background-image: url('../../../shared/assets/background/bg.jpg');
+		background-size: cover; /* Stretch the image to cover the entire screen */
+		background-position: center; /* Center the image */
+		background-repeat: no-repeat; /* Prevent the image from repeating */
+		position: relative;
+	}
+
+	body::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: hsl(0 0% 0 / 0.9); /* Apply the background color with opacity */
+		pointer-events: none; /* Allow interactions with the content below */
+		z-index: -1; /* Place the overlay behind the content */
 	}
 }

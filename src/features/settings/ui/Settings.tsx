@@ -19,7 +19,7 @@ export default function Settings() {
 					"Return back and select correct game path then press 'Install'",
 			})
 
-			localStorage.clear()
+			localStorage.removeItem('game-path')
 			dispatch(reset())
 			await relaunch()
 		} else {
@@ -34,7 +34,7 @@ export default function Settings() {
 	return (
 		<section className='flex justify-center flex-col'>
 			<div className='flex flex-col items-center'>
-				<Header title='Config' description='Edit / Repair' />
+				<Header title='Settings' description='Edit / Repair' />
 				<Name />
 				<Button
 					variant={'link'}

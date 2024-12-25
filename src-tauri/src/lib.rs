@@ -1,10 +1,11 @@
 use std::fs::File;
 use std::io::copy;
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::thread;
 use std::time::Duration;
 use std::{env, fs};
 use tauri::Runtime;
+use std::io;
 use tauri::{AppHandle, Manager};
 use tauri_plugin_shell::process::CommandEvent;
 use tauri_plugin_shell::ShellExt;
@@ -100,18 +101,54 @@ async fn extract<R: Runtime>(
     Ok(extracted_files)
 }
 
+#[tauri::command]
+async fn remove_path(path: String) -> Result<(), String> {
+    remove_dir_recursive(&path).map_err(|e| e.to_string())
+}
+
+fn remove_dir_recursive(path: &str) -> io::Result<()> {
+    let path = Path::new(path);
+
+    if path.is_dir() {
+        for entry in fs::read_dir(path)? {
+            let entry = entry?;
+            let path = entry.path();
+            if path.is_dir() {
+                remove_dir_recursive(path.to_str().unwrap())?;
+            } else {
+                fs::remove_file(path)?;
+            }
+        }
+        fs::remove_dir(path)?;
+    } else if path.is_file() {
+        fs::remove_file(path)?;
+    }
+
+    Ok(())
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_log::Builder::new()
+        .target(tauri_plugin_log::Target::new(
+          tauri_plugin_log::TargetKind::Webview,
+        ))
+        .target(tauri_plugin_log::Target::new(
+            tauri_plugin_log::TargetKind::LogDir {
+              file_name: Some("logs".to_string()),
+            },
+          ))
+        .build())
         .plugin(tauri_plugin_updater::Builder::new().build())
-        .plugin(tauri_plugin_single_instance::init(|app, args, cwd| {}))
+        .plugin(tauri_plugin_single_instance::init(|_app, _args, _cwd| {}))
         .plugin(tauri_plugin_process::init())
         .plugin(tauri_plugin_shell::init())
         .plugin(tauri_plugin_fs::init())
         .plugin(tauri_plugin_upload::init())
         .plugin(tauri_plugin_dialog::init())
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![extract, launch_game])
+        .invoke_handler(tauri::generate_handler![extract, launch_game, remove_path])
         .setup(|app| {
             let main_window = app.get_webview_window("main").unwrap();
             thread::spawn(move || {

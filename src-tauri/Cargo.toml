@@ -1,6 +1,6 @@
 [package]
 name = "mron-launcher"
-version = "1.2.2"
+version = "1.2.3"
 description = "MRON Launcher"
 authors = ["awalki"]
 edition = "2021"
@@ -38,6 +38,7 @@ tauri-plugin-shell = "2"
 tauri-plugin-process = "2"
 
 tauri-plugin-single-instance = "2"
+tauri-plugin-log = "2"
 
 [target.'cfg(not(any(target_os = "android", target_os = "ios")))'.dependencies]
 tauri-plugin-updater = "2"

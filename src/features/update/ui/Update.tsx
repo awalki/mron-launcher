@@ -5,22 +5,22 @@ import { dispatch as storeDispatch } from '@/shared/utils/storeHelper'
 import { Loader2 } from 'lucide-react'
 import { useSelector } from 'react-redux'
 
-export default function Install() {
+export default function Update() {
 	const launcher = useSelector((state: RootState) => state.launcher.launcher)
 
 	return (
 		<Button
-			className='w-44 font-paragraph font-bold bg-yellow-300 hover:bg-yellow-400'
+			className='w-44 font-paragraph font-bold bg-blue-400 hover:bg-blue-500'
 			onClick={() => handleInstall(storeDispatch)}
 			disabled={launcher.isInstalling}
 		>
 			{launcher.isInstalling ? (
 				<span className='flex flex-row items-center'>
 					<Loader2 className='animate-spin mr-2' />
-					Installing...
+					Updating...
 				</span>
 			) : (
-				'Install'
+				'Update MRON'
 			)}
 		</Button>
 	)
